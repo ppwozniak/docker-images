@@ -1,7 +1,7 @@
 FROM centos:6.8
 USER root
 
-RUN sed -i 's/mirror.centos.org\/centos\/\$releasever/vault.centos.org\/6.9/' /etc/yum.repos.d/CentOS-Base.repo
+RUN sed -i 's/mirror.centos.org\/centos\/\$releasever/vault.centos.org\/6.8/' /etc/yum.repos.d/CentOS-Base.repo
 RUN sed -i 's/mirrorlist/\#mirrorlist/' /etc/yum.repos.d/CentOS-Base.repo
 RUN sed -i 's/\#baseurl/baseurl/' /etc/yum.repos.d/CentOS-Base.repo
 
