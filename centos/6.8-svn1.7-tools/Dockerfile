@@ -15,6 +15,6 @@ RUN python3 get-pip.py \
 
 ENV NON_INTERACTIVE=1
 ENV NO_MOD_DAV=1
-COPY subversion_installer_1.7.sh
+COPY subversion_installer_1.7.sh .
 RUN bash subversion_installer_1.7.sh \
     && rm -f subversion_installer_1.7.sh
