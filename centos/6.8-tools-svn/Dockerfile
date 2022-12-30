@@ -8,8 +8,8 @@ RUN sed -i 's/mirror.centos.org\/centos\/\$releasever/vault.centos.org\/6.8/' /e
     && sed -i 's/mirrorlist/\#mirrorlist/' /etc/yum.repos.d/CentOS-Base.repo \ 
     && sed -i 's/\#baseurl/baseurl/' /etc/yum.repos.d/CentOS-Base.repo
 
-RUN yum install -qy epel-release \ 
-    && yum install -qy ant rpm-build python34
+RUN yum install -q -y epel-release \ 
+    && yum install -q -y ant rpm-build python34
 
 RUN python3 get-pip.py \
     && rm -f get-pip.py \ 
