@@ -6,7 +6,7 @@ RUN sed -i 's/mirror.centos.org\/centos\/\$releasever/vault.centos.org\/6.8/' /e
     && sed -i 's/\#baseurl/baseurl/' /etc/yum.repos.d/CentOS-Base.repo
 
 RUN yum install -y epel-release \ 
-    && yum install -y ant rpm-build python34
+    && yum install -y rpm-build python34
 
 COPY get-pip.py .
 RUN python3 get-pip.py \
