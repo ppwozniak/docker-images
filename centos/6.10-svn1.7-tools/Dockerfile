@@ -1,4 +1,4 @@
-FROM centos:6.8
+FROM centos:6.10
 USER root
 
 RUN sed -i 's/mirror.centos.org\/centos\/\$releasever/vault.centos.org\/6.10/' /etc/yum.repos.d/CentOS-Base.repo \ 
