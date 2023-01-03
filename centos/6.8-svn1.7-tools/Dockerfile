@@ -10,9 +10,8 @@ RUN yum install -y epel-release \
 
 COPY get-pip.py .
 RUN python3 get-pip.py \
-    && pip install plumbum
+    && pip install plumbum 
 
-ENV NON_INTERACTIVE=1
-ENV NO_MOD_DAV=1
+ENV NON_INTERACTIVE=1 NO_MOD_DAV=1
 COPY subversion_installer_1.7.sh .
 RUN bash subversion_installer_1.7.sh 
