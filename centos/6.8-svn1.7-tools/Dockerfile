@@ -5,6 +5,8 @@ RUN sed -i 's/mirror.centos.org\/centos\/\$releasever/vault.centos.org\/6.8/' /e
     && sed -i 's/mirrorlist/\#mirrorlist/' /etc/yum.repos.d/CentOS-Base.repo \ 
     && sed -i 's/\#baseurl/baseurl/' /etc/yum.repos.d/CentOS-Base.repo
 
+COPY wandisco-git.repo /etc/yum.repos.d/
+
 RUN yum install -y epel-release \ 
     && yum install -y rpm-build python34 git
 
