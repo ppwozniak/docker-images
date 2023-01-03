@@ -6,15 +6,13 @@ RUN sed -i 's/mirror.centos.org\/centos\/\$releasever/vault.centos.org\/6.8/' /e
     && sed -i 's/\#baseurl/baseurl/' /etc/yum.repos.d/CentOS-Base.repo
 
 RUN yum install -y epel-release \ 
-    && yum install -y rpm-build python34
+    && yum install -y rpm-build python34 git
 
 COPY get-pip.py .
 RUN python3 get-pip.py \
-    && rm -f get-pip.py \ 
     && pip install plumbum
 
 ENV NON_INTERACTIVE=1
 ENV NO_MOD_DAV=1
 COPY subversion_installer_1.7.sh .
-RUN bash subversion_installer_1.7.sh \
-    && rm -f subversion_installer_1.7.sh
+RUN bash subversion_installer_1.7.sh 
